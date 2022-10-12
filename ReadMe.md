@@ -11,6 +11,7 @@ You can refer to Lab 6 for instructions on how to do this. Make sure to update t
 
 ``` npm run dev ```
 
+#### If you have questions, you can reach out to Sreesha Nath, sreesha.nath@colorado.edu
 
 
 
