@@ -1,7 +1,7 @@
 # Lecture Demo for Templating
 
-#### Note: For the route to return data to the UI, in a DB docker Container, run code in the create.sql and insert.sql
-You can refer to Lab 6 for instructions on how to do this. Make sure to update the dbconfig connection string to connect to the db container instead of localhost.
+### Note: For the routes to return data to the UI, we need to initialize the database. To do so, the create.sql and insert.sql files in a DB docker Container, 
+You can refer to Lab 6 for instructions on how to do this. Make sure to update `host` in the dbconfig connection string to connect to the `db` container instead of `localhost`.
 
 ## Instructions to run the demo for Lecture 14
 
