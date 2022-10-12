@@ -5,11 +5,17 @@ You can refer to Lab 6 for instructions on how to do this. Make sure to update t
 
 ## Instructions to run the demo for Lecture 14
 
-``` npm run postdev ```
+``` 
+npm install
+npm run postdev 
+```
 
 ## Instructions to run the demo for Lecture 15
 
-``` npm run dev ```
+``` 
+npm install
+npm run dev 
+```
 
 #### If you have questions, you can reach out to Sreesha Nath, sreesha.nath@colorado.edu
 
