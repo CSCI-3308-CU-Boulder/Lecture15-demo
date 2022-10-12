@@ -1,0 +1,29 @@
+<%- include('../partials/header') %>
+<%- include('../partials/menu') %>
+
+<main>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <th>RecipeName</th>
+                <th>Prep Time</th>
+                <th>Cook Time</th>
+                <th>Image</th>
+                <th>URL</th>
+            </thead>
+            <tbody>
+                <% rows.forEach(el => { %>
+                    <tr>
+                        <td><%= el.recipename %></td>
+                        <td><%= el.preptimemins %></td>
+                        <td><%= el.cooktimemins %></td>
+                        <td><img src="<%= el.image %>" alt=""></td>
+                        <td><a href="<%= el.recipeurl %>">Here is the full recipe</a></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<%- include('../partials/footer') %>
