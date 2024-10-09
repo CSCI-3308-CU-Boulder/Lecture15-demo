@@ -1,0 +1,22 @@
+    <div class="container-lg">
+        <table class="table">
+            <thead>
+                <th>RecipeName</th>
+                <th>Prep Time</th>
+                <th>Cook Time</th>
+                <th>Image</th>
+                <th>URL</th>
+            </thead>
+            <tbody>
+                 {{#each data}}
+                    <tr>
+                        <td>{{recipename}}</td>
+                        <td>{{preptimemins}}</td>
+                        <td>{{cooktimemins}}</td>
+                        <td><img src="{{image}}" style="height:100px;" alt=""></td>
+                        <td><a href="{{recipeurl}}">Here is the full recipe</a></td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>

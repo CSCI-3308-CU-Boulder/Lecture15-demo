@@ -18,21 +18,17 @@ const dbConfig = {
 
 const db = pgp(dbConfig);
 
+
 app.get('/', (req,res) => {
     res.send({"message":"Welcome"});
 });
-
-app.get('/welcome', function(req,res){
-	res.send("Welcome to this application!");
-});
-
 
 app.get('/getallrecipes', (req, res) => {
     let query = `select * from recipes;`;
     db.any(query)
     .then((rows) => {
-        res.send(rows[1].recipename); //returning all rows to the client
-        // res.send({"Author": rows[0].authorid}); // accessing a column value from one of the rows in the result set
+        // res.send(rows); //returning all rows to the client
+        res.send({"Author": rows[0].authorid}); // accessing a column value from one of the rows in the result set
     })
     .catch((error) => {
         res.send({'message' : error});
@@ -42,7 +38,6 @@ app.get('/getallrecipes', (req, res) => {
 app.get('/getRecipeById', (req, res) => {
     let rId = req.query.id;
     let query = `SELECT * FROM recipes WHERE recipeId = ${rId};`;
-
     db.any(query)
     .then((rows) => {
         res.send(rows);
@@ -76,7 +71,7 @@ app.get('/getRecipeByName/:name', (req,res) => {
     })
 });
 
-app.post('/addRecipe', (req,res) => {
+app.put('/addRecipe', (req,res) => {
     let query = `INSERT INTO recipes(recipename, preptimemins, cooktimemins, authorId, image, recipeurl) VALUES ('${req.body.name}', ${req.body.preptime}, ${req.body.cooktime}, ${req.body.author}, '${req.body.image}', '${req.body.url}') returning *;`;
     db.any(query)
     .then((rows) => {
@@ -88,9 +83,8 @@ app.post('/addRecipe', (req,res) => {
     });
 });
 
-app.put('/updateRecipe', (req, res) => {
-    let query = `UPDATE recipes SET authorId = ${req.body.authorId} WHERE recipename LIKE '%${req.body.name}%';`;
-    console.log(query);
+app.post('/updateRecipe', (req, res) => {
+    let query = `UPDATE recipes SET authorId = 5 WHERE recipename LIKE '%${req.body.name}%';`;
     db.any(query)
     .then((rows) => {
         console.log(rows);
